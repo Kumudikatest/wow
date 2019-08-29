@@ -1,82 +1,59 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "677f16de-0ea0-4e88-9eff-c803da1b9488": {
-        "id": "677f16de-0ea0-4e88-9eff-c803da1b9488",
+      "66412d57-aae3-43a9-bf6a-ce4dcf173514": {
+        "id": "66412d57-aae3-43a9-bf6a-ce4dcf173514",
         "parent": null,
         "name": "wow",
         "type": "DIRECTORY",
         "isDirectory": true,
         "children": [
-          "bb594113-76af-479c-84c8-522c0dec15df"
+          "bc89ce13-0c38-4c91-b325-5847dbc48f34"
         ],
         "isRemovable": false,
         "filePath": "wow"
       },
-      "bb594113-76af-479c-84c8-522c0dec15df": {
-        "id": "bb594113-76af-479c-84c8-522c0dec15df",
-        "parent": "677f16de-0ea0-4e88-9eff-c803da1b9488",
-        "name": "function.js",
+      "bc89ce13-0c38-4c91-b325-5847dbc48f34": {
+        "id": "bc89ce13-0c38-4c91-b325-5847dbc48f34",
+        "parent": "66412d57-aae3-43a9-bf6a-ce4dcf173514",
+        "name": "lambda.js",
         "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "wow/function.js",
-        "code": "exports.handler = function(request, response) {\n    \n    response.send({\"message\": \"Successfully executed\"});\n}",
+        "filePath": "wow/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
         "config": {
-          "runtime": "nodejs8",
+          "runtime": "nodejs8.10",
+          "handler": "handler",
           "timeout": 60,
           "memory": 128,
-          "triggerType": 0
+          "layers": []
         },
-        "triggers": [
-          {
-            "resourceName": "http-trigger",
-            "config": {}
-          }
-        ]
-      },
-      "96867ac5-651b-4bf0-96c7-165cd2ca6d52": {
-        "id": "96867ac5-651b-4bf0-96c7-165cd2ca6d52",
-        "parent": null,
-        "name": "index.js",
-        "type": "JS_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "index.js",
-        "code": "// This file is used to register all your cloud functions in GCP.\n// DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\nexports.wowfunction = require(\"./wow/function.js\").handler;"
-      },
-      "43de5798-1946-4739-bfc1-b1dcd7e02dc7": {
-        "id": "43de5798-1946-4739-bfc1-b1dcd7e02dc7",
-        "parent": null,
-        "name": "main.py",
-        "type": "PYTHON_FILE",
-        "isDirectory": false,
-        "children": [],
-        "isRemovable": false,
-        "filePath": "main.py",
-        "code": "# This file is used to register all your cloud functions in GCP.\n# DO NOT EDIT/DELETE THIS, UNLESS YOU KNOW WHAT YOU ARE DOING.\n\n"
+        "triggers": []
       }
     },
     "deletedFiles": [],
-    "rootNode": "677f16de-0ea0-4e88-9eff-c803da1b9488",
+    "rootNode": "66412d57-aae3-43a9-bf6a-ce4dcf173514",
     "openFiles": [
-      "bb594113-76af-479c-84c8-522c0dec15df"
+      "bc89ce13-0c38-4c91-b325-5847dbc48f34"
     ],
-    "currentFileId": "bb594113-76af-479c-84c8-522c0dec15df",
-    "resources": {
-      "http-trigger": {
-        "name": "http-trigger",
-        "type": "http-trigger",
-        "config": {}
-      }
-    },
+    "currentFileId": "bc89ce13-0c38-4c91-b325-5847dbc48f34",
+    "resources": {},
     "customTemplate": {
       "dialect": null,
       "definitions": null
     },
-    "envVariables": [],
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
     "packageJSON": {
       "dependencies": {}
     }
@@ -85,10 +62,10 @@
     "projectName": "wow",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east1",
-    "platform": "GCP",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1567066444265
+    "lastSave": 1567066543826
   },
   "VCS_STATE": {
     "provider": "GitHub",
